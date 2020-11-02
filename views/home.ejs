@@ -1,0 +1,13 @@
+<h1>
+	welcome! if you wish to enter the raveclaw common room, answer this quiz correctly!
+</h1>
+<h4>
+	<%= quiz.question %>
+</h4>
+<% 
+var position = Math.floor(Math.random()* 5); 
+quiz.incorrect_answers.splice(position, 0, quiz.correct_answer);
+%> 
+<% quiz.incorrect_answers.forEach(function(answer){ %>
+	<input type = "button" value = "<%= answer %>">
+<% })%>
